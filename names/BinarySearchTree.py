@@ -18,6 +18,7 @@ class BinarySearchTree:
 
   def contains(self, target):
     if target is self.value:
+      print("match found")
       return True
     if target < self.value:
       if self.left:

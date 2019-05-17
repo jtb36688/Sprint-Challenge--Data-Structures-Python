@@ -26,6 +26,20 @@ for name_2 in names_2:
     else:
         namebst2.insert(name_2)
 
+counter = []
+def checkdupes(subject, checker):
+    if subject.contains(checker.value):
+        duplicates.append(checker.value)
+    if checker.left:
+        checkdupes(subject, checker.left)
+    if checker.right:
+        checkdupes(subject, checker.right)
+
+
+checkdupes(namebst2, namebst1)
+
+
+
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
