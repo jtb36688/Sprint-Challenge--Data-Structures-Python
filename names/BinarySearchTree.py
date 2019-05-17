@@ -5,7 +5,7 @@ class BinarySearchTree:
     self.right = None
 
   def insert(self, value):
-    if value < self.value:
+    if value <= self.value:
         if not self.left:
           self.left = BinarySearchTree(value)
         else:
@@ -17,10 +17,9 @@ class BinarySearchTree:
           self.right.insert(value)
 
   def contains(self, target):
-    if target is self.value:
-      print("match found")
+    if target == self.value:
       return True
-    if target < self.value:
+    if target <= self.value:
       if self.left:
         return self.left.contains(target)
       else:

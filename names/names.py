@@ -14,17 +14,17 @@ duplicates = []
 namebst1 = None
 namebst2 = None
 
-for name_1 in names_1:
+for n1 in names_1:
     if not namebst1:
-        namebst1 = BinarySearchTree(name_1)
+        namebst1 = BinarySearchTree(n1)
     else:
-        namebst1.insert(name_1)
+        namebst1.insert(n1)
 
-for name_2 in names_2:
+for n2 in names_2:
     if not namebst2:
-        namebst2 = BinarySearchTree(name_2)
+        namebst2 = BinarySearchTree(n2)
     else:
-        namebst2.insert(name_2)
+        namebst2.insert(n2)
 
 counter = []
 def checkdupes(subject, checker):
@@ -36,11 +36,13 @@ def checkdupes(subject, checker):
         checkdupes(subject, checker.right)
 
 
-checkdupes(namebst2, namebst1)
+checkdupes(namebst1, namebst2)
 
 
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
+
+print(len(duplicates))
 
